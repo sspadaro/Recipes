@@ -3,7 +3,7 @@ import { supabase } from './lib/supabase.ts'
 import type { Session } from '@supabase/supabase-js'
 import './App.css'
 import AuthForm from './components/AuthForm.tsx';
-import RecipeList from './components/RecipeList.tsx';
+import RecipesPage from './components/RecipesPage.tsx';
 
 function App() {
   const [session, setSession] = useState<Session | null>(null);
@@ -41,7 +41,7 @@ function App() {
         {loading ? <p>Loading...</p> : 
           session ?
           <div>
-            <RecipeList />
+            <RecipesPage />
             <button onClick={() => signOut()}>
             Sign Out </button>
           </div> : <AuthForm /> }
